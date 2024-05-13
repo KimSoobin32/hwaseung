@@ -1,1 +1,76 @@
 @charset 'utf-8';
+.inner {
+  width: 140rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 0, 0.3);
+}
+.inner-wide {
+  width: 160rem;
+}
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#header nav {
+  height: 9.5rem;
+  background: #5f5;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.logo a {
+  display: block;
+  width: 17rem;
+  height: 2.4rem;
+  background: #000 url(../img/logo.svg) no-repeat 0 0 / contain;
+}
+.gnb {
+  display: flex;
+  margin-right: auto;
+  margin-left: 6.5rem;
+}
+.gnb li a {
+  display: block;
+  border: 1px solid #000;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+.util {
+  display: flex;
+}
+.btn-lang {
+  width: 5.5rem;
+  height: 2.5rem;
+  background: #000 url(../img/ico-lang.svg) no-repeat 0 0 / contain;
+}
+.btn-menu {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #f00 url(../img/ico-menu.svg) no-repeat 0 0 / contain;
+}
+
+.visual {
+  height: 108rem;
+  background: skyblue;
+}
+.video {
+  height: 100%; /* 부모한테 크기 있다면 세로 % 가능 */
+  border: 10px solid #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.visual .inner {
+  position: relative;
+}
+.visual-con {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #55f;
+}
