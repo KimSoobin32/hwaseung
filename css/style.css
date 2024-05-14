@@ -12,6 +12,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
 }
 #header nav {
   height: 9.5rem;
@@ -55,6 +56,7 @@
 .visual {
   height: 108rem;
   background: skyblue;
+  position: relative;
 }
 .video {
   height: 100%; /* 부모한테 크기 있다면 세로 % 가능 */
@@ -66,6 +68,8 @@
 }
 .visual .inner {
   position: relative;
+  height: 100%;
+  /* 자식이 posa라 height 0나올때 부모 height 있을 때 사용 */
 }
 .visual-con {
   position: absolute;
@@ -73,4 +77,100 @@
   left: 0;
   transform: translateY(-50%);
   background: #55f;
+}
+
+.visual-con h2 {
+  font-weight: 700;
+  font-size: 7rem;
+  color: #fff;
+  line-height: 1.2142;
+  /* 85/70 */
+  letter-spacing: -0.25px;
+}
+.visual-con a {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.sec-title {
+  background: khaki;
+  font-weight: 700;
+  color: var(--title-color);
+}
+.sec-title h3 {
+  font-size: 2.4rem;
+  display: flex;
+  background: #5f5;
+  gap: 0.9rem;
+  align-items: flex-end;
+}
+.sec-title h3::after {
+  content: '';
+  display: block;
+  width: 13rem;
+  height: 1px;
+  background: #9c9c9c;
+  margin-bottom: 0.5rem;
+}
+.sec-title p {
+  font-size: 4.8rem;
+  line-height: 1.4;
+  margin-top: 4.5rem;
+}
+
+.business {
+  padding: 17rem 0 9rem;
+}
+.business-list {
+  display: flex;
+  margin-top: 7rem;
+}
+.business-list li {
+  border: 1px solid #000;
+  height: 37rem;
+  flex: 1 1 20%;
+}
+.business-list li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px solid #f00;
+  width: 100%;
+  height: 100%;
+  padding: 2.7rem;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: #fff;
+}
+.pr {
+  padding: 8rem 0 10rem;
+}
+.pr-list {
+  display: flex;
+  gap: 2rem;
+  margin-top: 7rem;
+}
+.pr-list li {
+  border: 1px solid #000;
+  height: 50.2rem;
+  flex: 1 1 30%;
+}
+.pr-list li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #fff;
+  padding: 2.7rem;
+}
+
+.management {
+  background: #f3f3f3;
+  padding: 8rem 0 10rem;
+}
+.management-list {
+  background: tomato;
+  height: 368px;
 }
