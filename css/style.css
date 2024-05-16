@@ -174,3 +174,120 @@
   background: tomato;
   height: 368px;
 }
+
+.heritage {
+  padding: 18rem 0 19.2rem;
+}
+
+.heritage-con {
+  background: #5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex 아이템들은 개별적으로 위치 조정 가능 */
+}
+.heritage-con h4 {
+  font-weight: 900;
+  font-size: 7.2rem;
+  color: var(--title-color);
+}
+.heritage-con strong {
+  font-weight: 600;
+  font-size: 3.6rem;
+  color: var(--title-color);
+  margin-top: 6rem;
+}
+.heritage-con p {
+  margin-top: 4rem;
+  font-size: 2.4rem;
+  text-align: center;
+}
+.heritage-con a {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--title-color);
+  margin-top: 8.2rem;
+  align-self: flex-end; /* asfe: 교차축(가로) 방향으로 아이템을 개별 배치 */
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.heritage-con a::after {
+  content: '';
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url(../img/ico-arr.svg) no-repeat 50%;
+}
+#footer {
+  padding: 11.6rem 0 13.3rem;
+  background: url(https://www.hwaseunggroup.com/kor/assets/img/common/footer_bg_.png) no-repeat 0 0 / cover fixed;
+}
+.foot-links {
+  border: 1px solid #f00;
+  display: flex;
+  justify-content: space-between;
+}
+.foot-menu {
+  background: #5f5;
+}
+.foot-menu ul {
+  display: flex;
+  gap: 14rem;
+}
+.foot-menu ul li {
+  border: 1px solid #ff0;
+}
+.foot-menu ul li dl dt {
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: #fff;
+}
+.foot-menu ul li dl dd {
+  font-weight: 200;
+  font-size: 1.8rem;
+  line-height: 1.89;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* dd로는 처음 */
+.foot-menu ul li dl dd:first-of-type {
+  margin-top: 3.6rem;
+}
+.foot-family {
+  background: #55f;
+}
+.family-site {
+  border: 1px solid #fff;
+  width: 28.6rem;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.family-site select {
+  background: transparent;
+  color: #fff;
+  appearance: none; /* 기본 디자인 빠짐 */
+  padding: 0 1.5rem;
+  flex: 1 1 auto;
+}
+.family-site select option {
+  background: #333;
+}
+.family-site::after {
+  content: '';
+  display: block;
+  background: #f00;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.foot-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 7rem;
+  padding-top: 3.2rem;
+  text-align: center;
+  font-weight: 200;
+  font-size: 1.4rem;
+  color: #fff;
+}
