@@ -185,6 +185,8 @@
   flex-direction: column;
   align-items: center;
   /* flex 아이템들은 개별적으로 위치 조정 가능 */
+
+  text-align: center;
 }
 .heritage-con h4 {
   font-weight: 900;
@@ -200,7 +202,6 @@
 .heritage-con p {
   margin-top: 4rem;
   font-size: 2.4rem;
-  text-align: center;
 }
 .heritage-con a {
   font-weight: 600;
@@ -318,4 +319,227 @@
 }
 .sns-list > a.instagram {
   background-image: url(../img/ico-instagram.svg);
+}
+
+/* inner크기와 같은 분기점 생성 */
+/* 큰 inner기준 */
+@media (max-width: 1600px) {
+  .inner,
+  .inner-wide {
+    width: 924px;
+    width: 90.2344%;
+    /* 924/1024*100 */
+  }
+  .foot-menu ul {
+    gap: 7rem;
+  }
+}
+
+/* 태블릿 디자인 */
+@media (max-width: 1024px) {
+  /* .inner,
+  .inner-wide {
+    width: 924px;
+    width: 90.2344%;
+  } */
+  .business-list li a {
+    font-size: 1.8rem;
+  }
+  .pr-list li {
+    height: 33.2rem;
+  }
+  .heritage-con {
+    width: 71.4rem;
+    width: 77.2727%;
+    /* 714/924*100 */
+    margin: 0 auto;
+  }
+  .heritage-con strong {
+    font-size: 3.2rem;
+  }
+  .heritage-con p {
+    font-size: 2.2rem;
+  }
+  .foot-links {
+    width: 82.4rem;
+    width: 89.1775%;
+    /* 824/924*100 */
+    margin: 0 auto;
+  }
+  .foot-menu ul {
+    gap: 4.4rem;
+  }
+  .foot-menu ul li dl dt {
+    font-size: 1.8rem;
+  }
+  .foot-menu ul li dl dd {
+    font-size: 1.6rem;
+  }
+  .family-site {
+    width: 24rem;
+    height: 3rem;
+    font-size: 1.4rem;
+  }
+  .policy-list li a {
+    font-size: 1.4rem;
+  }
+}
+
+/* 문제가 발생하는 해상도를 위한 분기 */
+@media (max-width: 1000px) {
+  #header nav {
+    justify-content: space-between;
+  }
+  .gnb {
+    display: none;
+  }
+  .business-list {
+    flex-wrap: wrap;
+  }
+  .business-list li {
+    flex: 1 1 30%;
+  }
+  .foot-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .foot-family {
+    align-items: center;
+  }
+  .family-site {
+    margin-top: 4rem;
+  }
+  .sns-list {
+    order: -1; /* 쌓이는 순서 변경(제일 위로) */
+    margin-top: 0;
+  }
+  .policy-list {
+    margin-top: 2.2rem;
+  }
+  .foot-copyright {
+    margin-top: 3.8rem;
+  }
+}
+
+/* 모바일 디자인 */
+@media (max-width: 700px) {
+  :root {
+    font-size: 90%;
+  }
+  .inner,
+  .inner-wide {
+    width: 89.7436%;
+    /* 350/390*100 */
+  }
+  #header nav {
+    height: 5.7rem;
+  }
+
+  .logo a {
+    width: 8.5rem;
+    height: 1.2rem;
+  }
+  .btn-lang {
+    width: 3.7rem;
+    height: 1.7rem;
+  }
+  .btn-menu {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+  .visual {
+    height: 54rem;
+  }
+  .visual-con h2 {
+    font-size: 3rem;
+  }
+  .visual-con a {
+    font-size: 1.3rem;
+  }
+  /* 컨테이너 자식 섹션 중 비주얼 아닌 것 */
+  #container > section:not(.visual) {
+    padding: 9rem 0;
+  }
+  .sec-title h3 {
+    font-size: 1.2rem;
+  }
+  .sec-title p {
+    font-size: 2.2rem;
+  }
+
+  /* .business-list {
+    flex-wrap: wrap;
+  } */
+  .business-list li {
+    flex: 0 1 50%; /* 0->늘어나지 않도록 */
+    height: 21rem;
+  }
+  .business-list li a {
+    font-size: 1.5rem;
+  }
+  .pr-list {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+  .pr-list li {
+    flex: 1 1 48%;
+    /* gap있을땐 100% 나누기 한줄배치 갯수 빼기 약간.. */
+    height: 19.2rem;
+  }
+  .pr-list li a {
+    font-size: 1.4rem;
+  }
+  .heritage-con {
+    width: 100%;
+  }
+  .heritage-con h4 {
+    font-size: 3rem;
+  }
+  .heritage-con strong {
+    font-size: 1.6rem;
+  }
+  .heritage-con p {
+    font-size: 1.3rem;
+  }
+  .heritage-con a {
+    /* background: #55f; */
+    font-size: 1.3rem;
+    width: 28.4rem;
+    width: 81.1429%;
+    /* 284/350*100 */
+    height: 3.8rem;
+    border: 1px solid #000;
+    border-radius: 50px;
+    justify-content: center;
+    align-self: center;
+    align-self: initial; /* 초기값으로 (align self는 값이 없는게 초기값.. */
+    /* align-self: unset; */
+  }
+
+  #footer {
+    padding: 6.3rem 0 8rem;
+  }
+  .foot-menu {
+    display: none;
+  }
+  .foot-links {
+    /* 이너 안쪽 */
+    width: 19.4rem;
+    width: 55.4286%;
+    /* 194/350*100 */
+    display: block;
+  }
+  .family-site {
+    width: 100%;
+    height: 3.5rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    font-size: 62.5%;
+  }
 }
