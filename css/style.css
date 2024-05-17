@@ -255,6 +255,11 @@
 }
 .foot-family {
   background: #55f;
+
+  /* 내부 아이템 오른쪽으로 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .family-site {
   border: 1px solid #fff;
@@ -290,4 +295,27 @@
   font-weight: 200;
   font-size: 1.4rem;
   color: #fff;
+}
+.policy-list {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.policy-list li a {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.sns-list {
+  margin-top: 12.6rem;
+}
+.sns-list > a {
+  display: block;
+  width: 3.6rem;
+  height: 3.6rem;
+  background: #f00 no-repeat 50%;
+}
+.sns-list > a.instagram {
+  background-image: url(../img/ico-instagram.svg);
 }
