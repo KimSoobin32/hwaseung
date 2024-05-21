@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/jquery-3.7.0.min.js"></script>
+  <script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -38,7 +40,13 @@
   <main id="container">
     <!-- 비주얼 영역 -->
     <section class="visual">
-      <div class="video"></div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/dKgtAX1G_tE?si=C70pbRAZh6w9JkxH&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=dKgtAX1G_tE"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
       <div class="inner">
         <div class="visual-con">
           <h2>70년을 넘어,<br>100년 기업을 향한<br>화승의 도전</h2>
@@ -55,11 +63,53 @@
           <p>압도적인 기술력을 바탕으로<br>당신의 일상을 새롭게 만듭니다</p>
         </div>
         <ul class="business-list">
-          <li><a href="#">소재</a></li>
-          <li><a href="#">자동차 부품</a></li>
-          <li><a href="#">종합무역</a></li>
-          <li><a href="#">화학</a></li>
-          <li><a href="#">스포츠패션ODM</a></li>
+          <li><a href="#">
+              <span>소재</span>
+              <dl class="detail-info">
+                <dt>소재</dt>
+                <dd>
+                  화승 고유의 컴파운드 배합기술은 우리 생활 곳곳은 물론 다양한 산업 현장에서도 만날 수 있습니다. 화승은 지속적인 변화와 혁신을 통해 우리의 일상을 더 특별하게 만들고 있습니다.
+                </dd>
+              </dl>
+            </a></li>
+          <li><a href="#">
+              <span>자동차 부품</span>
+              <dl class="detail-info">
+                <dt>자동차 부품</dt>
+                <dd>
+                  화승의 자동차부품 사업군은 국내 점유율 1위를 지켜감과 동시에 전세계 곳곳의 해외 법인에서도 압도적인 기술력을 통한 NO.1 테크기업으로서 세계 유수의 완성차 브랜드와 함께하고
+                  있습니다.
+                </dd>
+              </dl>
+            </a></li>
+          <li><a href="#">
+              <span>종합무역</span>
+              <dl class="detail-info">
+                <dt>종합무역</dt>
+                <dd>
+                  화승은 전략적인 구매 및 조달 분석으로 공급망 밸류 체인을 형성해 글로벌 SCM부터 화학원자재, MRO, 국내외 철강 및 식육의 유통까지 경쟁력있는 무역회사로 성장하고 있습니다.
+                </dd>
+              </dl>
+            </a></li>
+          <li><a href="#">
+              <span>화학</span>
+              <dl class="detail-info">
+                <dt>화학</dt>
+                <dd>
+                  화승은 독자적인 연구 플랫폼을 통해 R&D를 넘어 C&D로 나아가는 미래 첨단 기술 인프라를 끊임없이 넓혀가고 있습니다. 세계 최고의 화학 기술로 고객과 함께하고 있습니다.
+                </dd>
+              </dl>
+            </a></li>
+          <li><a href="#">
+              <span>스포츠패션ODM</span>
+              <dl class="detail-info">
+                <dt>스포츠패션ODM</dt>
+                <dd>
+                  화승은 신발을 넘어 모자, 의류 등 다양한 스포츠패션 아이템들을 생산하는 세계 최고의 스마트 팩토리 파트너로 고객 지향적 ODM 기술력을 통해 글로벌 브랜드들과 함께 새로운 미래를
+                  열어가고 있습니다.
+                </dd>
+              </dl>
+            </a></li>
         </ul>
       </div>
     </section>
@@ -160,10 +210,10 @@
         <div class="foot-family">
           <div class="family-site">
             <select>
-              <option value="">(주)화승네트웍스</option>
-              <option value="">(주)화승R&A</option>
-              <option value="">(주)화승코퍼레이션</option>
-              <option value="">(주)화승케미칼</option>
+              <option value="#">Family Site</option>
+              <option value="https://www.google.com">(주)화승네트웍스</option>
+              <option value="https://www.naver.com">(주)화승R&A</option>
+              <option value="https://www.daum.net">(주)화승코퍼레이션</option>
             </select>
           </div>
           <ul class="policy-list">
