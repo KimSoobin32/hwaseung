@@ -184,6 +184,10 @@
 
   background: no-repeat 0 0 / cover;
   transition: 0.3s;
+
+  /* detail info를 위한 설정 */
+  position: relative;
+  overflow: hidden;
 }
 .business-list li:nth-child(1) {
   background-image: url(../img/business-pic1.png);
@@ -200,9 +204,32 @@
 .business-list li:nth-child(5) {
   background-image: url(../img/business-pic5.png);
 }
+
+.business-list li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(255, 0, 0, 0.5); */
+  /* dim 그라데이션 밑에만 진하게.. 점점 사라지게 */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+
+  opacity: 0;
+  transition: 0.3s;
+}
+
 /* hover */
 .business-list li:hover {
   flex: 1 1 40%;
+}
+.business-list li:not(:hover) {
+  flex: 1 1 15%;
+}
+.business-list li:hover::before {
+  opacity: 1;
 }
 .business-list li a {
   display: flex;
@@ -217,6 +244,33 @@
   font-size: 2.6rem;
   color: #fff;
 }
+.detail-info {
+  /* background: tomato; */
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 2.7rem;
+
+  bottom: -50px;
+  opacity: 0;
+}
+.detail-info dt {
+  font-weight: 600;
+}
+.detail-info dd {
+  font-weight: 200;
+  font-size: 1.5rem;
+  margin-top: 1.8rem;
+}
+.business-list li:hover .detail-info {
+  bottom: 0;
+  opacity: 1;
+  transition: 0.3s 0.4s;
+}
+.business-list li:hover span {
+  opacity: 0;
+}
+
 .pr {
   padding: 8rem 0 10rem;
 }
