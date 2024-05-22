@@ -3,6 +3,7 @@
   width: 140rem;
   margin: 0 auto;
   /* background: rgba(255, 255, 0, 0.3); */
+  position: relative;
 }
 .inner-wide {
   width: 160rem;
@@ -14,6 +15,57 @@
   width: 100%;
   z-index: 10;
 }
+#header::after {
+  content: '';
+  background: #00f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+#header nav > * {
+  z-index: 1;
+}
+.submenu-wrap {
+  position: absolute;
+  top: 13.5rem;
+  left: 15rem;
+  /* background: #5f5; */
+  z-index: 1;
+}
+.submenu-wrap ul {
+  display: flex;
+  gap: 6rem;
+}
+/* .submenu-wrap ul li {
+  border: 1px solid #000;
+} */
+
+.submenu-wrap ul li dl dt {
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: rgb(11, 86, 117);
+}
+.submenu-wrap ul li dl dd {
+  font-size: 1.8rem;
+  line-height: 1.78;
+  color: #666;
+}
+.submenu-wrap ul li dl dt + dd {
+  margin-top: 2.4rem;
+}
+
+.banner-slide {
+  position: absolute;
+  top: 13.5rem;
+  right: 15rem;
+  background: #5f5;
+  z-index: 1;
+  width: 41.3rem;
+  height: 20.5rem;
+}
+
 #header nav {
   height: 9.5rem;
   /* background: #5f5; */
@@ -280,10 +332,38 @@
   margin-top: 7rem;
 }
 .pr-list li {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   height: 50.2rem;
   flex: 1 1 30%;
+
+  background: no-repeat 0 0 / cover;
+  position: relative;
 }
+.pr-list li:nth-child(1) {
+  background-image: url(../img/pr-pic1.png);
+}
+.pr-list li:nth-child(2) {
+  background-image: url(../img/pr-pic2.png);
+}
+.pr-list li:nth-child(3) {
+  background-image: url(../img/pr-pic3.png);
+}
+.pr-list li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.pr-list li:hover::before {
+  opacity: 1;
+}
+
 .pr-list li a {
   display: block;
   width: 100%;
@@ -292,6 +372,8 @@
   font-size: 2.6rem;
   color: #fff;
   padding: 2.7rem;
+
+  position: relative;
 }
 
 .management {
@@ -308,7 +390,7 @@
 }
 
 .heritage-con {
-  background: #5f5;
+  /* background: #5f5; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -353,20 +435,16 @@
   background: url(https://www.hwaseunggroup.com/kor/assets/img/common/footer_bg_.png) no-repeat 0 0 / cover fixed;
 }
 .foot-links {
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
   display: flex;
   justify-content: space-between;
 }
-.foot-menu {
-  background: #5f5;
-}
+
 .foot-menu ul {
   display: flex;
   gap: 14rem;
 }
-.foot-menu ul li {
-  border: 1px solid #ff0;
-}
+
 .foot-menu ul li dl dt {
   font-weight: 600;
   font-size: 2.2rem;
@@ -383,7 +461,7 @@
   margin-top: 3.6rem;
 }
 .foot-family {
-  background: #55f;
+  /* background: #55f; */
 
   /* 내부 아이템 오른쪽으로 정렬 */
   display: flex;
@@ -412,7 +490,7 @@
 .family-site::after {
   content: '';
   display: block;
-  background: #f00;
+  /* background: #f00; */
   width: 1.2rem;
   height: 1.2rem;
 }
@@ -443,7 +521,7 @@
   display: block;
   width: 3.6rem;
   height: 3.6rem;
-  background: #f00 no-repeat 50%;
+  background: no-repeat 50%;
 }
 .sns-list > a.instagram {
   background-image: url(../img/ico-instagram.svg);
