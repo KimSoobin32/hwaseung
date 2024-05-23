@@ -17,13 +17,19 @@
 }
 #header::after {
   content: '';
-  background: #00f;
+  background: #fff;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 400px;
+  transform: translateY(-100%);
+  transition: 0.3s;
 }
+#header.active::after {
+  transform: translateY(0%);
+}
+
 #header nav > * {
   z-index: 1;
 }
@@ -33,6 +39,8 @@
   left: 15rem;
   /* background: #5f5; */
   z-index: 1;
+
+  display: none;
 }
 .submenu-wrap ul {
   display: flex;
@@ -84,6 +92,8 @@
   z-index: 1;
   width: 41.3rem;
   height: 20.5rem;
+
+  display: none;
 }
 
 #header nav {
@@ -130,9 +140,9 @@
   height: 2px;
   transition: 0.3s;
   background: var(--main-color);
-  background: #f00;
+  /* background: #f00; */
 }
-.gnb li a:hover b::after {
+.gnb li.on a b::after {
   width: 100%;
 }
 
