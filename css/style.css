@@ -9,11 +9,27 @@
   width: 160rem;
 }
 #header {
-  position: absolute;
+  position: fixed;
+  /* fixed는 무조건 뷰포트 기준 */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
+}
+#header::before {
+  content: '';
+  position: absolute;
+  top: 9.5rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #b3b3b3;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s;
+}
+#header.active::before {
+  opacity: 1;
 }
 #header::after {
   content: '';
@@ -28,6 +44,15 @@
 }
 #header.active::after {
   transform: translateY(0%);
+}
+#header.active .logo a {
+  background-image: url(../img/logo_blue_01.png);
+}
+#header.active .gnb li a {
+  color: #000;
+}
+#header.active .btn-menu {
+  background-image: url(../img/ico-menu-b.svg);
 }
 
 #header nav > * {
@@ -53,7 +78,11 @@
 .submenu-wrap ul li dl dt {
   font-weight: 600;
   font-size: 2.2rem;
-  color: rgb(11, 86, 117);
+  /* color: rgb(11, 86, 117); */
+  color: var(--title-color);
+}
+.submenu-wrap ul li.on dl dt {
+  color: var(--main-color);
 }
 .submenu-wrap ul li dl dd {
   font-size: 1.8rem;
@@ -137,12 +166,15 @@
   left: 50%;
   transform: translateX(-50%);
   width: 0%;
-  height: 2px;
+  height: 3px;
   transition: 0.3s;
   background: var(--main-color);
   /* background: #f00; */
 }
-.gnb li.on a b::after {
+/* .gnb li.on a b::after {
+  width: 100%;
+} */
+.gnb li:hover a b::after {
   width: 100%;
 }
 
