@@ -45,12 +45,22 @@
 #header.active::after {
   transform: translateY(0%);
 }
+
+#header.w-bg {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+#header.w-bg .logo a,
 #header.active .logo a {
   background-image: url(../img/logo_blue_01.png);
 }
+#header.w-bg .gnb li a,
 #header.active .gnb li a {
   color: #000;
 }
+#header.w-bg .btn-menu,
 #header.active .btn-menu {
   background-image: url(../img/ico-menu-b.svg);
 }
