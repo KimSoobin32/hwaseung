@@ -15,6 +15,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
+  transition: 0.3s;
 }
 #header::before {
   content: '';
@@ -60,6 +61,7 @@
 #header.active .gnb li a {
   color: #000;
 }
+#header.w-bg .btn-m-menu,
 #header.w-bg .btn-menu,
 #header.active .btn-menu {
   background-image: url(../img/ico-menu-b.svg);
@@ -200,6 +202,39 @@
   width: 2.5rem;
   height: 2.5rem;
   background: url(../img/ico-menu.svg) no-repeat 0 0 / contain;
+}
+.btn-m-menu {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url(../img/ico-menu.svg) no-repeat 0 0 / contain;
+  display: none;
+}
+
+/* 모바일용 전체 메뉴 */
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  display: none;
+}
+.m-submenu-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100vh;
+  background: #fff;
+  z-index: 100;
+  padding: 5vw;
+  transform: translateX(100%);
+  transition: 0.3s;
+}
+.m-submenu-wrap.active {
+  transform: translateX(0%);
 }
 
 .visual {
@@ -700,6 +735,14 @@
   .gnb {
     display: none;
   }
+
+  .btn-menu {
+    display: none;
+  }
+  .btn-m-menu {
+    display: block;
+  }
+
   .business-list {
     flex-wrap: wrap;
   }
@@ -752,6 +795,7 @@
     width: 3.7rem;
     height: 1.7rem;
   }
+  .btn-m-menu,
   .btn-menu {
     width: 1.7rem;
     height: 1.7rem;
