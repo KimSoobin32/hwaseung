@@ -232,6 +232,8 @@
   background: #fff;
   padding: 10px;
   height: 3.6rem;
+
+  display: none;
 }
 .lang-select::after {
   content: '';
@@ -305,7 +307,7 @@
   background: tomato;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .m-gnb > li.on > strong {
@@ -360,7 +362,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
 }
 .video iframe {
   width: 100%;
@@ -512,9 +514,9 @@
 .business-list li:hover {
   flex: 1 1 40%;
 }
-.business-list li:not(:hover) {
+/* .business-list li:not(:hover) {
   flex: 1 1 15%;
-}
+} */
 .business-list li:hover::before {
   opacity: 1;
 }
@@ -771,8 +773,25 @@
     width: 90.2344%;
     /* 924/1024*100 */
   }
+
+  .submenu-wrap {
+    left: 3%;
+  }
+  .banner-slide {
+    right: 3%;
+  }
+
   .foot-menu ul {
     gap: 7rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .submenu-wrap ul li dl dt {
+    font-size: 1.8rem;
+  }
+  .submenu-wrap ul li dl dd {
+    font-size: 1.6rem;
   }
 }
 
@@ -831,7 +850,7 @@
 }
 
 /* 문제가 발생하는 해상도를 위한 분기 */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   #header nav {
     justify-content: space-between;
   }
@@ -909,6 +928,15 @@
   .visual-con h2 {
     font-size: 3rem;
   }
+
+  .visual-con h2 b {
+    position: initial; /* 초기화 */
+  }
+  .visual-con h2 b::after {
+    left: 0;
+    bottom: -7px;
+  }
+
   .visual-con a {
     font-size: 1.3rem;
   }
