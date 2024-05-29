@@ -70,12 +70,12 @@ $(function () {
     $banner.stop().fadeOut(duration);
   }
 
-  let scrollTop = $window.scrollTop();
+  let scrollTop = $window.scrollTop(); /* 윈도우의 스크롤 값 */
   //비주얼 영역의 세로크기 저장
-  const visualHeight = $('.visual').outerHeight();
   setWhiteBackground();
 
   function setWhiteBackground() {
+    const visualHeight = $('.visual').outerHeight(); /* 비주얼 값도 갱신되게 함 */
     //두 값을 비교(스크롤값이 비주얼 영역의 세로보다 크다면 = 비주얼 영역을 지난다)
     if (scrollTop >= visualHeight) {
       $header.addClass('w-bg');
@@ -83,6 +83,8 @@ $(function () {
       $header.removeClass('w-bg');
     }
   }
+
+  $window.on('resize', setWhiteBackground);
 
   //스크롤 이벤트
   $window.on('scroll', function () {
@@ -101,5 +103,11 @@ $(function () {
   $('.family-site select').on('change', function () {
     const linkValue = $(this).val();
     window.open(linkValue);
+  });
+
+  //AOS.js
+  AOS.init({
+    duration: 600,
+    offset: 200,
   });
 });
