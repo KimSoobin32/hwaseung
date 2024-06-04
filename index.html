@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>화승그룹</title>
   <link rel="stylesheet" href="./css/aos.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/jquery-3.7.0.min.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
   <script src="./js/aos.js"></script>
   <script src="./js/script.js"></script>
 </head>
@@ -245,11 +247,42 @@
           <p data-aos="fade-up" data-aos-delay="300">쉬운 길보다는 옳은 길로,<br>더 나은 미래를 위한 탐구는 계속됩니다</p>
         </div>
       </div>
-      <div class="management-list">
-        <div><a href="#"><strong>나눔경영</strong></a></div>
-        <div><a href="#"><strong>환경영영</strong></a></div>
-        <div><a href="#"><strong>사회경영</strong></a></div>
-        <div><a href="#"><strong>투명경영</strong></a></div>
+      <div class="management-list-wrap">
+        <div class="swiper management-list">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <strong class="badge badge1">나눔경영</strong>
+                <img src="./img/slide_01.jpg" alt="나눔경영">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <strong class="badge badge2">환경경영</strong>
+                <img src="./img/slide_02.jpg" alt="나눔경영">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <strong class="badge badge3">사회경영</strong>
+                <img src="./img/slide_03.jpg" alt="나눔경영">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <strong class="badge badge4">투명경영</strong>
+                <img src="./img/slide_04.jpg" alt="투명경영">
+              </a>
+            </div>
+
+          </div>
+
+          <div class="btn-wrap">
+            <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
+            <button type="button" class="btn-next"><i class="hidden">다음</i></button>
+          </div>
+
+        </div>
       </div>
     </section>
 

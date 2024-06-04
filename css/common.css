@@ -23,6 +23,10 @@ hr,
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
+img {
+  max-width: 100%;
+  /* 없으면 border 침범 */
+}
 body {
   font: 2rem 'Pretendard', sans-serif;
 }

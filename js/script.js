@@ -110,4 +110,23 @@ $(function () {
     duration: 600,
     offset: 200,
   });
+
+  //지속가능경영 슬라이더
+  const managementList = new Swiper('.management-list', {
+    autoplay: {
+      delay: 3000,
+    },
+    slidesPerView: 1, //가로크기 675px을 위해 (=> 전체크기2700/4)
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.btn-next',
+      prevEl: '.btn-prev',
+    },
+    breakpoints: {
+      //뷰포트가 1024 이상일 때
+      1024: {
+        slidesPerView: 4,
+      },
+    },
+  });
 });
