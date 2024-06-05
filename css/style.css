@@ -623,8 +623,16 @@ body {
   padding: 8rem 0 10rem;
   /* 시안 크기인 1920픽셀.. 그보다 더 큰 2700이 가운데 정렬되고 centered slide 된 구조 
   중앙의 중앙..*/
-  position: relative;
+
   height: 110rem;
+
+  box-sizing: content-box;
+}
+.management-inner {
+  position: relative;
+  /* border: 5px solid #000; */
+  margin-top: 12vw;
+  /* 뷰포트의  12%*/
 }
 
 .management-list-wrap {
@@ -632,7 +640,7 @@ body {
   width: 2700px; /* 슬라이드 하나를 675px로 그리기 위해서 (4개 배치) */
   /* 600px이미지 넣고 여백 넣으려고 675 잡음 */
   position: absolute;
-  top: 460px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -985,10 +993,7 @@ body {
   .pr-list li {
     height: 33.2rem;
   }
-  .management {
-    height: 107.4219vw;
-    /* 1100/1024*100 */
-  }
+
   .management-list-wrap {
     width: 100%;
     /* management 섹션 기준 100% */
@@ -1020,6 +1025,18 @@ body {
     width: 98px;
     height: 98px;
   }
+
+  .progress {
+    bottom: -10px;
+    width: 77.03%;
+  }
+  .pagination-wrap {
+    bottom: -60px;
+    width: 77.03%;
+    /* 778/1010*100 */
+    /* 보이는 슬라이드 아이템이 하나여야 % 계산 가능 */
+  }
+
   .heritage-con {
     width: 71.4rem;
     width: 77.2727%;
@@ -1105,11 +1122,11 @@ body {
 
 /* 지속가능영역 슬라이더 위치조정 */
 @media (max-width: 850px) {
-  .management {
-    height: 140vw;
-  }
   .management-list-wrap {
     transform: translate(-50%, 0);
+  }
+  .pagination-wrap {
+    justify-content: center;
   }
 }
 
@@ -1250,8 +1267,5 @@ body {
     bottom: -30px;
     left: 0;
     right: auto;
-  }
-  .management {
-    height: 100vw;
   }
 }

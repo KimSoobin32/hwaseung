@@ -84,7 +84,10 @@ $(function () {
     }
   }
 
-  $window.on('resize', setWhiteBackground);
+  $window.on('resize', function () {
+    setWhiteBackground();
+    setManagementHeight();
+  });
 
   //스크롤 이벤트
   $window.on('scroll', function () {
@@ -159,4 +162,16 @@ $(function () {
     $btnPlay.hide();
     $btnPause.show();
   });
+
+  //지속가능영역의 세로크기 결정
+  setManagementHeight();
+
+  // function setManagementHeight() {
+  //   const titleHeight = $('.management .sec-title').outerHeight();
+  //   const sliderHeight = $('management-list-wrap').outerHeight();
+  //   const managementHeight = titleHeight + sliderHeight + 180;
+  //   $('.management').css({
+  //     height: `calc(${managementHeight}px + 12vw)`,
+  //   });
+  // }
 });
