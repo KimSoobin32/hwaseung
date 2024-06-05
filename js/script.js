@@ -115,9 +115,17 @@ $(function () {
   const managementList = new Swiper('.management-list', {
     autoplay: {
       delay: 3000,
+      disableOnInteraction: false,
+      //자동 재생 계속 활성화(사용자가 멈춤/재생 후에도)
     },
     slidesPerView: 1, //가로크기 675px을 위해 (=> 전체크기2700/4)
     centeredSlides: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
     navigation: {
       nextEl: '.btn-next',
       prevEl: '.btn-prev',
@@ -128,5 +136,27 @@ $(function () {
         slidesPerView: 4,
       },
     },
+    on: {
+      autoplayTimeLeft(swiper, timeLeft, percentage) {
+        // console.log(timeLeft, percentage);
+        //timeLeft: 남은시간(ms)
+        //percentage: 진행상태를 1~0사이의 값으로
+        const percentageValue = (1 - percentage) * 100 + '%';
+        document.querySelector('.progress-bar').style.width = percentageValue;
+      },
+    },
+  });
+  const $btnPause = $('.btn-pause');
+  const $btnPlay = $('.btn-play');
+  $btnPlay.hide();
+  $btnPause.on('click', function () {
+    managementList.autoplay.stop();
+    $btnPause.hide();
+    $btnPlay.show();
+  });
+  $btnPlay.on('click', function () {
+    managementList.autoplay.start();
+    $btnPlay.hide();
+    $btnPause.show();
   });
 });
