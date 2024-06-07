@@ -803,6 +803,55 @@ body {
   background: #039;
 }
 
+.autoplay-progress {
+  position: absolute;
+  left: 50%;
+  bottom: -100px;
+  z-index: 10;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #039;
+  /* border: 2px solid #f55; */
+  border-radius: 50%;
+}
+
+.autoplay-progress::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  border-radius: 50%;
+  /* 가상요소에는 reset.css 예외라 따로 처리해줘야 함 */
+  box-sizing: border-box;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 2px;
+  stroke: #039;
+  fill: none;
+  /* 원둘레 길이 (2파이 r =>125.6)
+  stroke-dashoffset: 125.6->0으로 값변경됨
+  스크립트에서 --progress 세팅 */
+
+  /* 2*3.14159*98 => 615.75164=>2파이r*/
+  stroke-dashoffset: calc(615.75164px * (1 - var(--progress)));
+  stroke-dasharray: 615.75164;
+  /* 시작지점이 3시부터 시작해서 12시부터 시작하게끔 */
+  transform: rotate(-90deg);
+}
+
 .heritage {
   padding: 18rem 0 19.2rem;
 }
@@ -1026,6 +1075,11 @@ body {
     height: 98px;
   }
 
+  .management-list-wrap .management-list .swiper-slide .badge {
+    width: 140px;
+    font-size: 1.8rem;
+  }
+
   .progress {
     bottom: -10px;
     width: 77.03%;
@@ -1125,6 +1179,23 @@ body {
   .management-list-wrap {
     transform: translate(-50%, 0);
   }
+  .management-list-wrap .management-list .swiper-slide .badge {
+    /* width: 140px;
+    font-size: 1.8rem; */
+    /* width: 16.47058823529412%; */
+    /* 최소값120, 16.4706%주고 싶은 값 ,최대값140 */
+    width: clamp(120px, 16.4706%, 140px);
+    /* 140/850*100 */
+    /* font-size: 2.117647058823529vw; */
+    font-size: clamp(1.2rem, 2.118vw, 1.6rem);
+    /* 18/850*100 */
+  }
+
+  .management-list-wrap .btn-wrap button {
+    width: 80px;
+    height: 80px;
+  }
+
   .pagination-wrap {
     justify-content: center;
   }
@@ -1208,6 +1279,12 @@ body {
   .pr-list li a {
     font-size: 1.4rem;
   }
+
+  .management-list-wrap .btn-wrap button {
+    width: 60px;
+    height: 60px;
+  }
+
   .heritage-con {
     width: 100%;
   }
